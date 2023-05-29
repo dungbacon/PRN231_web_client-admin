@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Header from "./../../components/Header";
 import Hero from "./../../components/Hero";
-import Products from "../../components/Products";
-import FeatureCard from "../../components/FeatureCard";
+import ProductCard from "../../components/ProductCard";
 import Statistic from "../../components/Statistic";
 import Footer from "../../components/Footer";
+import Loading from "../../components/Loading";
+import Categories from "../../components/Categories";
 
 const Home = () => {
-  const [products, setProducts] = useState([]);
+  const [products = [], setProducts] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -18,18 +19,24 @@ const Home = () => {
       setProducts(data);
     };
     fetchProducts();
-  }, {});
+  }, []);
 
   return (
     <>
+      <Header />
       <Hero />
-      {products.length > 0 ? (
-        <Products products={products} />
-      ) : (
-        <div>Loading....</div>
-      )}
-      <FeatureCard />
+      <Categories />
+      <div className="flex flex-col text-center w-full">
+        <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">
+          Products
+        </h2>
+        <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900">
+          Most Popular Product
+        </h1>
+      </div>
+      {products.length > 0 ? <ProductCard products={products} /> : <Loading />}
       <Statistic />
+      <Footer />
     </>
   );
 };
