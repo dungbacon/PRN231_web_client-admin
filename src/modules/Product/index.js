@@ -11,7 +11,6 @@ const Product = () => {
     const fetchProduct = async () => {
       const response = await fetch(`https://fakestoreapi.com/products/${id}`);
       const data = await response.json();
-      console.log(data);
       setProduct(data);
     };
     fetchProduct();
@@ -173,10 +172,10 @@ const Product = () => {
                 ${product?.price}
               </span>
               <div className="flex justify-between">
-                <button className="flex text-2xl py-2 px-4 text-white bg-green-500 border-0  focus:outline-none hover:bg-green-600 rounded">
+                <button className="flex text-lg py-2 px-4 text-white font-semibold bg-green-500 border-0  focus:outline-none hover:bg-green-600 rounded">
                   Buy
                 </button>
-                <button className="flex text-2xl py-2 px-4 text-white bg-green-500 border-0  focus:outline-none hover:bg-green-600 rounded ml-3">
+                <button className="flex text-lg py-2 px-4 text-gray-900 font-semibold bg-red-500 border hover:bg-red-600 hover:text-white focus:outline-none rounded ml-3">
                   Add to Cart
                 </button>
               </div>

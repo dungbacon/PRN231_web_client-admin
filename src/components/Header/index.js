@@ -1,9 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+const navigations = [
+  { name: "Home", path: "/" },
+  { name: "Products", path: "/products" },
+  { name: "About", path: "/about" },
+  { name: "Contact", path: "/contact" },
+];
+
 const Header = () => {
   return (
-    <header class="text-gray-600 body-font shadow-md">
+    <header class="fixed top-0 left-0 z-10 w-full bg-white text-gray-600 body-font shadow-md">
       <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <Link
           to={"/"}
@@ -24,13 +31,16 @@ const Header = () => {
           <span class="ml-3 text-xl">Tailblocks</span>
         </Link>
         <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-          <a class="mr-5 hover:text-gray-900">First Link</a>
-          <a class="mr-5 hover:text-gray-900">Second Link</a>
-          <a class="mr-5 hover:text-gray-900">Third Link</a>
-          <a class="mr-5 hover:text-gray-900">Fourth Link</a>
+          {navigations.map((item) => {
+            return (
+              <Link to={`${item.path}`} class="mr-5 hover:text-gray-900">
+                {item.name}
+              </Link>
+            );
+          })}
         </nav>
         <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
-          Button
+          Add to cart
           <svg
             fill="none"
             stroke="currentColor"
