@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const navigations = [
   { name: "Home", path: "/" },
@@ -9,6 +9,12 @@ const navigations = [
 ];
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const hanldeClickBtn = () => {
+    navigate("/cart");
+  };
+
   return (
     <header className="fixed top-0 left-0 z-10 w-full bg-white text-gray-600 body-font shadow-md">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -33,14 +39,20 @@ const Header = () => {
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
           {navigations.map((item) => {
             return (
-              <Link to={`${item.path}`} className="mr-5 hover:text-gray-900">
+              <Link
+                to={`${item.path}`}
+                className="mr-5 hover:text-gray-900 font-semibold"
+              >
                 {item.name}
               </Link>
             );
           })}
         </nav>
-        <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
-          Add to cart
+        <button
+          className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-green-500 hover:text-white font-semibold rounded text-base mt-4 md:mt-0"
+          onClick={() => hanldeClickBtn()}
+        >
+          Go to Cart
           <svg
             fill="none"
             stroke="currentColor"

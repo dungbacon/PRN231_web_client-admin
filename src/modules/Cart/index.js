@@ -85,13 +85,13 @@ const Cart = () => {
               return (
                 <div className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
                   <div className="flex w-2/5">
-                    <div className="w-20">
+                    <Link to={`/products/${cart?.id}`} className="w-20">
                       <img
                         className="h-24"
                         src={cart?.image}
                         alt={cart?.title}
                       />
-                    </div>
+                    </Link>
                     <div className="flex flex-col justify-between ml-4 flex-grow">
                       <span className="font-bold text-sm">{cart?.title}</span>
                       <span className="text-red-500 text-xs capitalize">
@@ -115,9 +115,10 @@ const Cart = () => {
                     </svg>
 
                     <input
-                      className="mx-2 border text-center w-8"
+                      className="mx-2 border text-center w-8 text-base"
                       type="text"
                       value={cart?.quantity}
+                      readOnly={true}
                     />
 
                     <svg
@@ -168,13 +169,13 @@ const Cart = () => {
               <label className="font-medium inline-block mb-3 text-sm uppercase">
                 Shipping
               </label>
-              <select className="block p-2 text-gray-600 w-full text-sm">
+              <select className="block p-2 text-gray-600 w-full text-sm border rounded">
                 <option>Standard shipping - $10.00</option>
               </select>
             </div>
             <div className="py-10">
               <label
-                for="promo"
+                htmlFor="promo"
                 className="font-semibold inline-block mb-3 text-sm uppercase"
               >
                 Promo Code
@@ -183,10 +184,10 @@ const Cart = () => {
                 type="text"
                 id="promo"
                 placeholder="Enter your code"
-                className="p-2 text-sm w-full"
+                className="p-2 text-sm w-full border rounded"
               />
             </div>
-            <button className="bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase">
+            <button className="bg-red-500 hover:bg-red-600 px-5 py-2 text-sm font-semibold text-white uppercase">
               Apply
             </button>
             <div className="border-t mt-8">
@@ -194,7 +195,7 @@ const Cart = () => {
                 <span>Total cost</span>
                 <span>${(total + 10).toFixed(2)}</span>
               </div>
-              <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">
+              <button className="bg-green-500 font-semibold hover:bg-green-600 py-3 text-sm text-white uppercase w-full">
                 Checkout
               </button>
             </div>

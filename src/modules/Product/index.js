@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { json, useParams } from "react-router-dom";
-import Error404 from "../../components/Error/error404";
+import { useNavigate, useParams } from "react-router-dom";
 import Header from "./../../components/Header";
 import Footer from "./../../components/Footer";
 import Loading from "../../components/Loading";
 const Product = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const [product, setProduct] = useState({});
 
@@ -19,6 +19,35 @@ const Product = () => {
     };
     fetchProduct();
   }, []);
+
+  const handleCart = (product, redirect) => {
+    console.log(product);
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const isProductExist = cart.find((item) => item.id === product.id);
+    if (isProductExist) {
+      const updatedCart = cart.map((item) => {
+        if (item.id === product.id) {
+          return {
+            ...item,
+            quantity: item.quantity + 1,
+          };
+        }
+        return item;
+      });
+      console.log(updatedCart);
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+    } else {
+      localStorage.setItem(
+        "cart",
+        JSON.stringify([...cart, { ...product, quantity: 1 }])
+      );
+    }
+
+    if (redirect) {
+      navigate("/cart");
+    }
+  };
+
   if (!Object.keys(product).length > 0) {
     <Loading />;
   }
@@ -180,10 +209,16 @@ const Product = () => {
                   ${product?.price}
                 </span>
                 <div className="flex justify-between">
-                  <button className="flex text-lg py-2 px-4 text-white font-semibold bg-green-500 border-0  focus:outline-none hover:bg-green-600 rounded">
+                  <button
+                    className="flex text-lg py-2 px-4 text-white font-semibold bg-green-500 border-0  focus:outline-none hover:bg-green-600 rounded"
+                    onClick={() => handleCart(product, true)}
+                  >
                     Buy
                   </button>
-                  <button className="flex text-lg py-2 px-4 text-gray-900 font-semibold bg-red-500 border hover:bg-red-600 hover:text-white focus:outline-none rounded ml-3">
+                  <button
+                    className="flex text-lg py-2 px-4 text-gray-900 font-semibold bg-red-500 border hover:bg-red-600 hover:text-white focus:outline-none rounded ml-3"
+                    onClick={() => handleCart(product)}
+                  >
                     Add to Cart
                   </button>
                 </div>

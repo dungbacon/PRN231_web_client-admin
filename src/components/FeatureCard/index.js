@@ -6,8 +6,8 @@ const FeatureCard = ({ cards = [] }) => {
     <section className="text-gray-600 body-font">
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-col text-center w-full mb-20">
-          <h2 className="text-xs text-green-500 tracking-widest font-medium title-font mb-1">
-            ROOF PARTY POLAROID
+          <h2 className="text-xs text-green-500 tracking-widest font-medium title-font mb-1 uppercase">
+            Category
           </h2>
           <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900">
             Master Cleanse Reliac Heirloom
@@ -44,7 +44,7 @@ const FeatureCard = ({ cards = [] }) => {
                       Blue bottle crucifix vinyl post-ironic four dollar toast
                       vegan taxidermy. Gastropub indxgo juice poutine.
                     </p>
-                    <a className="mt-3 text-green-500 inline-flex items-center">
+                    <div className="mt-3 text-green-500 inline-flex items-center">
                       Learn More
                       <svg
                         fill="none"
@@ -57,7 +57,7 @@ const FeatureCard = ({ cards = [] }) => {
                       >
                         <path d="M5 12h14M12 5l7 7-7 7"></path>
                       </svg>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </Link>
