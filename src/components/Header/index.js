@@ -34,7 +34,7 @@ const Header = () => {
           >
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
           </svg>
-          <span className="ml-3 text-xl">Tailblocks</span>
+          <span className="ml-3 text-xl font-mono">EShop</span>
         </Link>
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
           {navigations.map((item) => {

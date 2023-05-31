@@ -9,13 +9,16 @@ import Error404 from "./components/Error/error404";
 import CategoryProducts from "./modules/CategoryProducts";
 import Cart from "./modules/Cart";
 import About from "./modules/About";
+import SignUp from "./modules/Signup";
+import LoginModule from "./modules/Login";
 
 function App() {
   return (
     <div className="text-gray-600 text-4xl">
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        {/* <Route path="/login" element={<Login />}></Route> */}
+        <Route path="/login" element={<LoginModule />}></Route>
+        <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/products/:id" element={<Product />}></Route>
         <Route path="/products" element={<Products />}></Route>
         <Route path="/contact" element={<Contact />}></Route>

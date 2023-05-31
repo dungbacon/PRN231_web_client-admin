@@ -1,7 +1,21 @@
 import React from "react";
+import Header from "../../components/Login/Header";
+import LoginComponent from "../../components/Login/login";
 
-const Login = () => {
-  return <div>Login</div>;
+const LoginModule = () => {
+  return (
+    <div className="min-h-full h-auto flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-8">
+        <Header
+          heading="Login to your account"
+          paragraph="Don't have an account yet? "
+          linkName="Signup"
+          linkUrl="/signup"
+        />
+        <LoginComponent />
+      </div>
+    </div>
+  );
 };
 
-export default Login;
+export default LoginModule;
