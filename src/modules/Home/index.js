@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header from "./../../components/Header";
-import Hero from "./../../components/Hero";
+import Slider from "../../components/Slider";
 import ProductCard from "../../components/ProductCard";
 import Statistic from "../../components/Statistic";
 import Footer from "../../components/Footer";
@@ -24,7 +24,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      <Hero />
+      <Slider />
       <Categories />
       <div className="flex flex-col text-center w-full">
         <h2 className="text-xs text-green-500 tracking-widest font-medium title-font mb-1">

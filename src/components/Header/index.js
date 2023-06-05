@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 const navigations = [
   { name: "Home", path: "/" },
@@ -11,13 +13,17 @@ const navigations = [
 const Header = () => {
   const navigate = useNavigate();
 
-  const hanldeClickBtn = () => {
+  const hanldeCartBtn = () => {
     navigate("/cart");
+  };
+
+  const hanldeSignInBtn = () => {
+    navigate("/login");
   };
 
   return (
     <header className="fixed top-0 left-0 z-10 w-full bg-white text-gray-600 body-font shadow-md">
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <div className="container w-11/12 mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <Link
           to={"/"}
           className="flex cursor-pointer title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
@@ -37,9 +43,10 @@ const Header = () => {
           <span className="ml-3 text-xl font-mono">EShop</span>
         </Link>
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-          {navigations.map((item) => {
+          {navigations.map((item, index) => {
             return (
               <Link
+                key={index}
                 to={`${item.path}`}
                 className="mr-5 hover:text-gray-900 font-semibold"
               >
@@ -48,23 +55,28 @@ const Header = () => {
             );
           })}
         </nav>
-        <button
-          className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-green-500 hover:text-white font-semibold rounded text-base mt-4 md:mt-0"
-          onClick={() => hanldeClickBtn()}
-        >
-          Go to Cart
-          <svg
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            className="w-4 h-4 ml-1"
-            viewBox="0 0 24 24"
+        <div className="flex justify-around ">
+          <button
+            className="capitalize mr-5 inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-green-500 hover:text-white font-semibold rounded text-base mt-4 md:mt-0"
+            onClick={() => hanldeCartBtn()}
           >
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </button>
+            Go to Cart
+            <FontAwesomeIcon
+              className="pl-1"
+              icon={icon({ name: "cart-arrow-down" })}
+            />
+          </button>
+          <button
+            className="capitalize inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-green-500 hover:text-white font-semibold rounded text-base mt-4 md:mt-0"
+            onClick={() => hanldeSignInBtn()}
+          >
+            Sign In
+            <FontAwesomeIcon
+              className="pl-1"
+              icon={icon({ name: "sign-in" })}
+            />
+          </button>
+        </div>
       </div>
     </header>
   );
