@@ -2,6 +2,8 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
+import DropDown from "./DropDown";
+import LinkHeader from "./LinkHeader";
 
 const navigations = [
   { name: "Home", path: "/" },
@@ -45,13 +47,13 @@ const Header = () => {
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
           {navigations.map((item, index) => {
             return (
-              <Link
-                key={index}
-                to={`${item.path}`}
-                className="mr-5 hover:text-gray-900 font-semibold"
-              >
-                {item.name}
-              </Link>
+              <div key={index}>
+                {item.name === "Products" ? (
+                  <DropDown item={item} />
+                ) : (
+                  <LinkHeader item={item} />
+                )}
+              </div>
             );
           })}
         </nav>

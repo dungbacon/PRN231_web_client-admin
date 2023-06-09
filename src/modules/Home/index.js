@@ -25,7 +25,6 @@ const Home = () => {
     <>
       <Header />
       <Slider />
-      <Categories />
       <div className="flex flex-col text-center w-full">
         <h2 className="text-xs text-green-500 tracking-widest font-medium title-font mb-1">
           Products

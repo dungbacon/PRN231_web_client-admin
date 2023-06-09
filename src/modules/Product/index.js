@@ -48,10 +48,6 @@ const Product = () => {
     }
   };
 
-  if (!Object.keys(product).length > 0) {
-    <Loading />;
-  }
-
   return (
     <>
       <Header />

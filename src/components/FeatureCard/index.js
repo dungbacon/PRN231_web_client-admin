@@ -32,9 +32,9 @@ const FeatureCard = ({ cards = [] }) => {
                 to={`/categories/${item}`}
                 className={`p-4 md:w-1/${cards.length} cursor-pointer`}
               >
-                <div className="flex rounded-lg h-full bg-gray-100 flex-col">
-                  <div className="flex items-center mb-3">
-                    <div className="w-8 h-8 mr-3  text-green-500 flex-shrink-0">
+                <div className="flex rounded-lg h-full justify-center items-center bg-gray-100 flex-col">
+                  <div className="flex items-center">
+                    <div className="w-8 h-8 text-green-500 flex-shrink-0">
                       <StringToHtml input={result[item]} />
                     </div>
                     <h2 className="text-gray-900 text-lg title-font font-medium capitalize">
