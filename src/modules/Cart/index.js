@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import { Button } from "@chakra-ui/react";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -51,8 +52,11 @@ const Cart = () => {
 
   if (carts.length === 0) {
     return (
-      <div className=" h-[55vh] flex justify-center items-center text-4xl ">
-        Cart is Empty
+      <div className="text-center text-4xl h-screen flex-col justify-center">
+        <div>
+          <p>Cart is Empty</p>
+          <Link to={"/"}>Continue Shopping</Link>
+        </div>
       </div>
     );
   }
