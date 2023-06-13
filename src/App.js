@@ -1,6 +1,6 @@
 import react from "react";
 import Home from "./modules/Home";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Router } from "react-router-dom";
 import "./App.css";
 import Product from "./modules/Product";
 import Products from "./modules/Products";
@@ -11,12 +11,19 @@ import Cart from "./modules/Cart";
 import About from "./modules/About";
 import SignUp from "./modules/Signup";
 import LoginModule from "./modules/Login";
+import AdminView from "./modules/Admin";
+import Team from "./modules/Admin/Team";
+import Contacts from "./modules/Admin/Contacts";
 
 function App() {
   return (
-    <div className="text-gray-600 text-4xl">
+    <div className="text-gray-600 text-4xl h-full">
       <Routes>
         <Route path="/" element={<Home />}></Route>
+        <Route path="/admin" element={<AdminView />}>
+          <Route path="/admin/team" element={<Team />}></Route>
+          <Route path="/admin/contacts" element={<Contacts />}></Route>
+        </Route>
         <Route path="/login" element={<LoginModule />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/products/:id" element={<Product />}></Route>
