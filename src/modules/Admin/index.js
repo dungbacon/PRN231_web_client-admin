@@ -6,15 +6,10 @@ import TopBar from "./Global/TopBar";
 import SideBar from "./Global/SideBar";
 import DashBoard from "./DashBoard";
 import Team from "./Team";
-// import Invoices from "./invoices";
 import Contacts from "./Contacts";
-// import Bar from "./bar";
-// import Form from "./form";
-// import Line from "./line";
-// import Pipe from "./pipe";
-// import FAQ from "./faq";
-// import Geography from "./geography";
-// import Calendar from "./calendar";
+import Invoices from "./Invoices";
+import Form from "./Form";
+import Calendar from "./Calendar";
 
 const AdminView = () => {
   const [theme, colorMode] = useMode();
@@ -31,7 +26,9 @@ const AdminView = () => {
               <Route path="/" element={<DashBoard />} />
               <Route path="/team" element={<Team />} />
               <Route path="/contacts" element={<Contacts />} />
-              {/* Add other nested Route components here */}
+              <Route path="/invoices" element={<Invoices />} />
+              <Route path="/form" element={<Form />} />
+              <Route path="/calendar" element={<Calendar />} />
             </Routes>
           </main>
         </div>

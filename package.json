@@ -13,7 +13,9 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@fullcalendar/core": "^6.1.8",
     "@fullcalendar/daygrid": "^6.1.8",
+    "@fullcalendar/interaction": "^6.1.8",
     "@fullcalendar/list": "^6.1.8",
+    "@fullcalendar/react": "^6.1.8",
     "@fullcalendar/timegrid": "^6.1.8",
     "@iconscout/react-unicons": "^2.0.2",
     "@mui/icons-material": "^5.11.16",
@@ -39,7 +41,8 @@
     "react-scripts": "5.0.1",
     "sass": "^1.63.3",
     "web-vitals": "^2.1.4",
-    "yub": "^0.11.1"
+    "yub": "^0.11.1",
+    "yup": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

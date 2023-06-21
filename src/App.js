@@ -14,15 +14,21 @@ import LoginModule from "./modules/Login";
 import AdminView from "./modules/Admin";
 import Team from "./modules/Admin/Team";
 import Contacts from "./modules/Admin/Contacts";
+import Invoices from "./modules/Admin/Invoices";
+import Form from "./modules/Admin/Form";
+import Calendar from "./modules/Admin/Calendar";
 
 function App() {
   return (
     <div className="text-gray-600 text-4xl h-full">
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/admin" element={<AdminView />}>
-          <Route path="/admin/team" element={<Team />}></Route>
-          <Route path="/admin/contacts" element={<Contacts />}></Route>
+        <Route path="/admin/*" element={<AdminView />}>
+          <Route path="team" element={<Team />} />
+          <Route path="contacts" element={<Contacts />} />
+          <Route path="invoices" element={<Invoices />} />
+          <Route path="form" element={<Form />} />
+          <Route path="calendar" element={<Calendar />} />
         </Route>
         <Route path="/login" element={<LoginModule />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>

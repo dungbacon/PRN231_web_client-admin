@@ -15,34 +15,44 @@ const Team = () => {
     {
       field: "id",
       headerName: "ID",
+      headerAlign: "center",
+      align: "center",
     },
     {
       field: "name",
       headerName: "Name",
       flex: 1,
+      headerAlign: "center",
+      align: "center",
       cellClassName: "name-column--cell",
     },
     {
       field: "age",
       headerName: "Age",
       type: "number",
-      headerAlign: "left",
-      align: "left",
+      headerAlign: "center",
+      align: "center",
     },
     {
       field: "phone",
       headerName: "Phone Number",
       flex: 1,
+      headerAlign: "center",
+      align: "center",
     },
     {
       field: "email",
       headerName: "Email",
       flex: 1,
+      headerAlign: "center",
+      align: "center",
     },
     {
       field: "access",
       headerName: "Access Level",
       flex: 1,
+      headerAlign: "center",
+      align: "center",
       renderCell: ({ row: { access } }) => {
         return (
           <Box
