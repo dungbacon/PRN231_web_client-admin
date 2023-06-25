@@ -193,7 +193,7 @@ const SideBar = () => {
             </Typography>
             <Item
               title="Bar Chart"
-              to="/admin/bar"
+              to="/admin/barchart"
               icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -208,13 +208,6 @@ const SideBar = () => {
             <Item
               title="Line Chart"
               to="/admin/line"
-              icon={<TimelineOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Geography Chart"
-              to="/admin/geography"
               icon={<TimelineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}

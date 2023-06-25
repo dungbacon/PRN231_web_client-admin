@@ -86,9 +86,9 @@ const Calendar = () => {
         </Box>
 
         {/* CALENDAR */}
-        <Box flex="1 1 100%" ml="15px">
+        <Box flex="1 1 100%" ml="15px" fontSize="14px">
           <FullCalendar
-            height="75vh"
+            height="70vh"
             plugins={[
               dayGridPlugin,
               timeGridPlugin,

@@ -17,6 +17,10 @@ import Contacts from "./modules/Admin/Contacts";
 import Invoices from "./modules/Admin/Invoices";
 import Form from "./modules/Admin/Form";
 import Calendar from "./modules/Admin/Calendar";
+import FAQ from "./modules/Admin/FAQ";
+import BarChart from "./components/Admin/BarChart";
+import Pie from "./modules/Admin/Pie";
+import Line from "./modules/Admin/Line";
 
 function App() {
   return (
@@ -29,6 +33,10 @@ function App() {
           <Route path="invoices" element={<Invoices />} />
           <Route path="form" element={<Form />} />
           <Route path="calendar" element={<Calendar />} />
+          <Route path="faq" element={<FAQ />} />
+          <Route path="barchart" element={<BarChart />} />
+          <Route path="pie" element={<Pie />} />
+          <Route path="line" element={<Line />} />
         </Route>
         <Route path="/login" element={<LoginModule />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
